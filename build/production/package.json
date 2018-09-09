@@ -1,0 +1,12 @@
+{
+    "name": "{projectName}",
+    "version": "1.0.0",
+    "description": "A Vue.js project",
+    "private": true,
+    "scripts": {
+        "build": "node build/out.js"
+    },
+    "dependencies": {
+        "base-64": "^0.1.0"
+    }
+}

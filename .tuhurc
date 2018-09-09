@@ -1,0 +1,9 @@
+{
+  "projectName":"NaActivity",
+  "wxdev": {
+    "assetsPublicPath":"https://frontend-res.tuhu.work/project/NaActivity/"
+  },
+  "production": {
+    "assetsPublicPath":"https://res.tuhu.org/vue/NaActivity/"
+  }
+}

@@ -1,0 +1,79 @@
+<div class="_content">
+  <div class="carpage">
+    <tuhu-search ref="search" placeholder="搜索" cancel-text="取消" @input="input" @cancel="cancel" />
+    <div class="fix-char" v-text="currentChar" v-show="currentChar"></div>
+    <div class="page-content" @scroll="mainScroll">
+      <div class="hotbrand">热门品牌</div>
+      <div class="allcars white">
+        <div class="hotlist">
+          <div v-for="(item, index) in hots" :key="index" class="item">
+            <div v-for="(citem, cindex) in item" :key="cindex" class="car" @click="brandClick(citem)">
+              <img class="car-image" v-lazy="{src: citem.Url}" alt="" />
+              <div class="car-name" v-text="citem.BrandShow"></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider">
+          <div class="eachchar" v-for="(item, index) in brands" :key="index">
+            <div :scroll-index="index" class="Etitle" v-text="index"></div>
+            <div class="eachcar" v-for="(citem, cindex) in item" :key="cindex" @click="brandClick(citem)">
+              <div class="car-wrapper">
+                <img class="car-image" v-lazy="{src: citem.Url}" alt="" />
+                <div class="car-name" v-text="citem.BrandShow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="brandPos transition">
+        <div class="selectedonebrand">
+          <img class="car-image" alt="" />
+          <div class="car-name"></div>
+        </div>
+        <div class="reactiscroll-wrap brandlist">
+          <div class="reactiscroll-content"></div>
+        </div>
+      </div> -->
+      </div>
+    </div>
+    <!--显示搜索列表-->
+    <tuhu-scroller style="z-index: 9999;top: 2.2rem;" v-show="searchedCars.length > 0">
+      <div class="search-content" slot="content">
+        <div class="list">
+          <div class="scrollcar" v-for="(item, index) in searchedCars" v-text="item.Vehicle" @click="selectedBrandCar(item)"><img v-lazy="{src: item.ImageUrl}" alt="" class="car-image" /></div>
+        </div>
+      </div>
+    </tuhu-scroller>
+    <div class="slider-nav">
+      <div class="eachindex" @click="topClick">#</div>
+      <div class="eachindex" v-for="(item, index) in chars" :key="index" @click="charClick(item)" v-text="item"></div>
+    </div>
+    <tuhu-panel ref="panel" dir="right" open-type="cover">
+      <div slot="content" class="content-block">
+        <div class="selectedonebrand">
+          <img class="car-image" alt="" v-lazy="{src: currentBrandUrl}">
+          <div class="car-name" v-text="currentBrand"></div>
+        </div>
+        <div class="brandTitle" v-text="brandName"></div>
+        <div class="fix-char" style="top: 50px;" v-text="currentRightChar" v-show="currentRightChar"></div>
+        <!-- <tuhu-scroller style="top: 50px;"> -->
+          <div slot="content" class="content-block brandPos transition">
+            <div class="reactiscroll-wrap brandlist" @scroll="rightScroll">
+              <div class="reactiscroll-content" ref="brandScroll">
+                <template v-for="(item, index) in brandDatas">
+                  <div class="list-title" v-text="index" :scroll-right-index="index" :key="'title' + index"></div>
+                  <div class="list" :key="'list' + index">
+                    <div class="scrollcar" v-for="(citem, cindex) in item" v-text="citem.Vehicle.split('-')[0]" @click="selectedBrandCar(citem)" :Key="cindex"></div>
+                  </div>
+                </template>
+              </div>
+            </div>
+          </div>
+        <!-- </tuhu-scroller> -->
+      </div>
+    </tuhu-panel>
+
+    <!-- <div class="brandPos transition">
+
+        </div> -->
+  </div>
+</div>

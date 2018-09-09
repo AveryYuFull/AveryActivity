@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+    body, html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: "微软雅黑";
+    }
+    #allmap {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    #result {
+        width: 100%;
+        font-size: 12px;
+    }
+    dl, dt, dd, ul, li {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    dt {
+        font-size: 14px;
+        font-family: "微软雅黑";
+        font-weight: bold;
+        border-bottom: 1px dotted #000;
+        padding: 5px 0 5px 5px;
+        margin: 5px 0;
+    }
+    dd {
+        padding: 5px 0 0 5px;
+    }
+    li {
+        line-height: 28px;
+    }
+    .addressInfo {
+        width: 290px;
+        height: 80px;
+        background: url('https://res.tuhu.org/static/wx/images/shops/tabBg.png') no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: 210px;
+        left: 0;
+    }
+    .addressInfo .leftDesc {
+        float: left;
+        width: 72%;
+        padding: 0 5px;
+    }
+    .addressInfo .leftDesc .title {
+        color: #333;
+        font-size: 15px;
+        height:20px;
+        line-height: 20px;
+        overflow:hidden;
+        -ms-text-overflow:ellipsis;
+        -o-text-overflow:ellipsis;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+        -webkit-line-clamp:1;
+        -webkit-box-orient:vertical;
+    }
+    .addressInfo .leftDesc .subtitle {
+        color: #999;
+        font-size: 13px;
+        height:17px;
+        line-height: 17px;
+        overflow:hidden;
+        -ms-text-overflow:ellipsis;
+        -o-text-overflow:ellipsis;
+        text-overflow:ellipsis;
+        display:-webkit-box;
+        -webkit-line-clamp:1;
+        -webkit-box-orient:vertical;
+        margin-top: -10px;
+    }
+    .addressInfo .rightNav {
+        float: right;
+        width: 21%;
+        padding: 32px 0 0 0;
+        background:url('https://res.tuhu.org/static/wx/images/shops/navbg.png') no-repeat;
+        background-size: 100%;
+        font-size: 16px;
+        color: #ffffff;
+        text-align: center;
+        position: relative;
+        top: 2px;
+        right: 2px;
+        height: 60px;
+    }
+    .addressInfo .rightNav::after {
+        content: "";
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        left: 35%;
+        top: 8px;
+        background:url('https://res.tuhu.org/static/wx/images/shops/navIcon.png') no-repeat;
+        background-size: 100%;
+    }
+    .addressInfo::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+   .BMap_Marker img{
+        width:35px;
+        height:50px;
+    }
+</style>
+	<script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=w742K60CZ4fOaGEQ3n6HeB05"></script>
+	<title>导航去门店</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+    /* eslint-disable */
+  var data = parent._locateToData
+	// 百度地图API功能
+	var map = new BMap.Map('allmap');
+	var point = new BMap.Point(data.lng, data.lat);
+	map.centerAndZoom(point, 15);
+	var myIcon = new BMap.Icon('https://res.tuhu.org/static/wx/images/shops/huIcon.png', new BMap.Size(50, 50));
+	var marker = new BMap.Marker(point,{icon:myIcon});  // 创建标注
+  map.addOverlay(marker);              // 将标注添加到地图中
+  var label = new BMap.Label('<div class="addressInfo">' +
+                                '<div class="leftDesc">' +
+                                  '<p class="title">' + data.name + '</p>' +
+                                  '<p class="subtitle">' + data.address + '</p>' +
+                                '</div>' +
+                                '<div id="dh" class="rightNav">导航</div>' +
+                              '</div>', { offset: new BMap.Size(-128, -285) });
+  marker.setLabel(label);
+  label.addEventListener("click", labelclick)
+  function labelclick(e) {
+    if ('dh' === e.domEvent.target.id) {
+      parent.tuhu.nativeMap(data)
+    }
+  }
+</script>

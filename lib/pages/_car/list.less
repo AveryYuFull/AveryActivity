@@ -1,0 +1,357 @@
+
+.fix-char {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  color: #666;
+  background: #FFF;
+  padding: 6px 6px 6px;
+  border-bottom: 1px solid #d9d9d9;
+  z-index: 100;
+  font-size: 10px;
+}
+.panel {
+  width: 15rem;
+  background: #eee;
+  overflow-x: hidden;
+}
+.content{
+  overflow-y:hidden;
+  overflow-x:hidden;
+  background: #fff;
+  /*padding: 0 0.75rem;*/
+  position: absolute;
+  width: 100%;
+  // height: 100%;
+}
+.content-block{
+  // height: 100%;
+  margin: 0;
+}
+.panel.panel-right.panel-cover {
+  right: -15rem;
+  box-shadow: -1px 0 10px rgba(0,0,0,0.25);
+  overflow-x: hidden;
+}
+body.with-panel-right-cover .panel-right {
+  transform: translate3d(-15rem, 0, 0);
+}
+.card-content-inner {
+    padding: 0 0 0;
+}
+.carpage {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  box-sizing: border-box;
+  overflow: hidden;
+  .bar {
+    position: initial;
+    height: 44px;
+    .searchbar {
+      height: 44px;
+      padding: 8px 10px;
+    }
+  }
+
+  .searchBox {
+    background: #CAC9CF;
+    padding: 10px 10px;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      background: url("https://res.tuhu.org/static/wx/images/chepin/searcg.png") no-repeat;
+      background-size: 100%;
+      width: 12px;
+      height: 13px;
+      left: 18px;
+      top: 19px;
+    }
+    input {
+      border: 0;
+      height: 30px;
+      padding: 0 15px 0 30px;
+      border-radius: 6px;
+      width: 100%;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      font-size: 14px;
+      outline: none;
+      line-height: 30px;
+    }
+  }
+
+  .page-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    box-sizing: border-box;
+    height: 100%;
+    padding-bottom: 44px;
+    position: relative;
+    z-index: 1;
+    .hotbrand {
+      color: #999;
+      padding: 6px 0 6px 6px;
+      font-size: 10px;
+      border-bottom: 1px solid #d9d9d9;
+    }
+    .allcars {
+      font-size: 12px;
+      width: 100%;
+      background: #EDEDED;
+      * {
+        box-sizing: border-box;
+      }
+      .hotlist {
+        padding: 10px 0 0 0;
+        background: #fff;
+        margin-bottom: 5px;
+        .item {
+          display: table;
+          width: 100%;
+          text-align: center;
+          margin-left: 15px;
+          padding-right: 38px;
+          .car {
+            display: table-cell;
+            color: #333;
+            padding-bottom: 10px;
+            width: 20%;
+            .car-image {
+              width: 26px;
+              height: auto;
+              margin: auto;
+            }
+            .car-name {
+              margin-top: 2px;
+              color: #333;
+              font-size: 12px;
+            }
+          }
+          &:first-child {
+            border-bottom: 1px solid #d9d9d9;
+            margin-bottom: 10px;
+          }
+        }
+      }
+      .slider {
+        .eachchar {
+          margin-bottom: 5px;
+          background: #fff;
+          .Etitle {
+            color: #666;
+            background: #FFF;
+            padding: 6px 6px 6px;
+            border-bottom: 1px solid #d9d9d9;
+          }
+          .eachcar {
+            border-bottom: 1px solid #d9d9d9;
+            margin-left: 15px;
+            &:last-child {
+              border: 0;
+            }
+            .car-wrapper {
+              display: -webkit-box;
+              display: -webkit-flex;
+              display: flex;
+              -webkit-box-align: center;
+              -webkit-align-items: center;
+              align-items: center;
+              height: 44px;
+              line-height: 44px;
+
+              .car-image {
+                width: 26px;
+                height: auto;
+                margin-left: 6px;
+              }
+              .car-name {
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: flex;
+                -webkit-box-align: center;
+                -webkit-align-items: center;
+                align-items: center;
+                margin-left: 15px;
+                font-size: 13px
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .search-content {
+    background: #fff;
+    .list {
+      background: #fff;
+      border-bottom: 1px solid #d9d9d9;
+      .scrollcar {
+        padding-left: 4px;
+        font-size: 13px;
+        height: 44px;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        border-bottom: 1px solid #d9d9d9;
+        margin-left: 15px;
+        .car-image {
+          width: 26px;
+          height: 26px;
+          margin-right: 15px;
+        }
+        &.selected {
+          background: #d9d9d9;
+          margin-left: 0;
+          padding-left: 19px;
+        }
+        &:last-child {
+          border: 0;
+        }
+      }
+    }
+  }
+  .slider-nav {
+    position: fixed;
+    top: 10px;
+    right: 0;
+    bottom: 0;
+    margin-top: 3rem;
+    // min-height: 19rem;
+    min-height: 23rem;
+    z-index: 999;
+    color: #666;
+    text-align: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+    .eachindex {
+      width: 30px;
+      text-align: center;
+      -webkit-transition: -webkit-transform .3s;
+      transition: -webkit-transform .3s;
+      transition: transform .3s;
+      transition: transform .3s, -webkit-transform .3s;
+      color: #999;
+      font-size: 12px;
+    }
+  }
+  .selectedonebrand {
+    height: 50px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    border-bottom: 1px solid #d9d9d9;
+    background: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    right: 0;
+    .car-image {
+      margin: 0 12px 0 15px;
+      width: 30px;
+      height: 30px;
+    }
+    .car-name {
+      font-size: 14px;
+    }
+  }
+  .brandTitle{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    background: #fff;
+    color: #999;
+    padding: 6px 0 6px 6px;
+    border-bottom: 1px solid #d9d9d9;
+    font-size: 10px;
+    z-index: 9999;
+    position: fixed;
+    top: 50px;
+    left:0;
+    right:0;
+  }
+
+    .reactiscroll-wrap {
+      &.brandlist {
+        padding-bottom: 5px;
+        position: fixed;
+        top: 50px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: scroll;
+        z-index:999;
+      }
+      .list-title {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+        background: #fff;
+        color: #999;
+        padding: 6px 0 6px 6px;
+        border-bottom: 1px solid #d9d9d9;
+        font-size: 10px;
+      }
+      .reactiscroll-content {
+        z-index: 9;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        width: 100%;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+        background: #eee;
+        .list {
+          margin-bottom: 5px;
+          background: #fff;
+          border-bottom: 1px solid #d9d9d9;
+          .scrollcar {
+            padding-left: 4px;
+            font-size: 13px;
+            height: 44px;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            border-bottom: 1px solid #d9d9d9;
+            margin-left: 15px;
+            &.selected {
+              background: #d9d9d9;
+              margin-left: 0;
+              padding-left: 19px;
+            }
+            &:last-child {
+              border: 0;
+            }
+          }
+          &:last-child{
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+}

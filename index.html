@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        /* eslint-disable */
+        function VersionForAndroid(version) {
+
+        }
+
+        function VersionForIos() {
+
+        }
+
+        (function() {
+            var oHtml = document.documentElement;
+
+            function getSize() {
+                var screenWidth = window.screen.width;
+                if (screenWidth >= 640) {
+                    oHtml.style.fontSize = '20px';
+                } else if (screenWidth < 320) {
+                    oHtml.style.fontSize = '20px';
+                } else {
+                    oHtml.style.fontSize = screenWidth / 375 * 20 + 'px';
+                }
+            }
+
+            getSize();
+
+            window.onresize = function () {
+            getSize();
+    };
+}());
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="format-detection" content="telephone=no">
+    <title><%=htmlWebpackPlugin.options.pageTitle%></title>
+    <!-- <link rel="stylesheet" href="https://res.tuhu.org/vue/lib/css/sm.css"/> -->
+    <link rel="stylesheet" href="https://res.tuhu.org/vue/lib/css/sm-extend.min.css"/>
+    <script src="https://res.tuhu.org/react/lib/polyfills.1.0.4.min.js"></script>
+
+    <script>
+        /* eslint-disable */
+        (function (t, h, a, n, l, y) { t['TuhuAnalyticArray'] = t['TuhuAnalyticArray'] || []; t['Ta'] = {}; t['Ta'][l] = t[l] = t[l] || function (c, s, e) { if (typeof (c) === 'object') { t['TuhuAnalyticArray'].push(c); } else { if (c === 'pv') { s = 'pageview'; } if (e) { e = JSON.stringify(e); } t['TuhuAnalyticArray'].push({ 'event_type': c || '', 'event_action': s || '', 'metadata': e || '' }); } if (window._getTrack) { window._getTrack(); } }, y = h.createElement(a); y.async = 1; y.src = n + '?t=' + 1 * new Date(); y.onload = function () { if (window._getTrack) { window._getTrack(); } }; h.head.appendChild(y); })(window, document, 'script', 'https://res.tuhu.org/ta/ta.min.js', 'ta');
+    </script>
+</head>
+<body>
+    <!-- <div class="panel-overlay"></div> -->
+    <div id="root">
+
+    </div>
+    <script src="https://res.tuhu.org/vue/lib/js/zepto.<%= htmlWebpackPlugin.options.min %>js"></script>
+    <!-- <script src="./static/js/sm.js"></script> -->
+    <script src="https://res.tuhu.org/vue/lib/js/sm-extend.<%= htmlWebpackPlugin.options.min %>js"></script>
+  <script src="https://res.tuhu.org/vue/lib/js/vue.<%= htmlWebpackPlugin.options.min %>js"></script>
+  <script src="https://res.tuhu.org/vue/lib/js/vuex.<%= htmlWebpackPlugin.options.min %>js"></script>
+</body>
+</html>

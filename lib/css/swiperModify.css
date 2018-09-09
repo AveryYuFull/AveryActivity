@@ -1,0 +1,92 @@
+/*photoBrowser样式修改start*/
+.photo-browser .bar-nav{
+  display: none;
+}
+.photo-browser .bar-tab{
+  display: none;
+}
+.photo-browser-swiper-container{
+  padding-bottom: 0;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.7);
+}
+.photo-browser-swiper-wrapper{
+  width: 100%;
+  height: 100%;
+}
+.photo-browser .showpage{
+  color:#fff;
+  position: absolute;
+  z-index: 9;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  top: 10px;
+}
+.photo-browser-closeIcon{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAgRJREFUWAm9l0FuwjAQRWPWVO1hQjessoA7tKfoAdouehmOgAQLkFA3JYehhT2d73qQE8bO2CG1BHFie97Xn7EJZrPZvBhjPoqi+Dyfz09VVR2oP1gj3gPxFgSYEu/dbLfbH+rcgUgDNfVnQ4lw8DUxSsc7jqizww0aBkjEGhP/ntzuuw13kXej8Xj8TNAvRg0hQoKDadkA13V9fzqdVgR/ZCG3SkcEPi/L8hspKNAhNXPBiVWfdHTBwTb44hZwYk/OzFMLUwMH1zrAAgJOTMiZJCccHCm11Y74LufWdubZ5/4N9/s44cEnHC8Ex3jDAV4QcwLieF77mgrH+kYNtAOGnKCCnUGkPz8H3ikAEzQicuEqAZ4IHKF+XvdwAuN0hohjbZcwt92iKfAnOyeuQJgjCdPAsVYtAJMlEXjOjarduqKFY12SACwIiciBI564DTHwXy3JAanafaFwIfXYVjsgwXHCAcoiUIx0n3RsqxwIwfELCri0DbVOdAqIwbnapcLUpiMqQANn+3NFBAWkwPuIEAXkwHNFXO2CPnCIQF3gNwI7hEXFdkfDAQe/vLcjAAKh2rngOGjX1dVE54vuRcAt4SxOI8IKGAKuFWGGhGtEjCjHCyqSzrdXDpZzdYUp/e9YYBdMOWhuwfH62FUSATYceKPPkT7LnGqPQdtjnoglmDT++gv7fD4+rIgKZQAAAABJRU5ErkJggg==') center no-repeat;
+  background-size: 15px 15px;
+  right: 0;
+  top: 0;
+  padding: 20px;
+  z-index: 10;
+}
+.photo-browser-exposed .photo-browser-swiper-container{
+  background: rgba(0, 0, 0, 0.7);
+}
+.photo-browser-slide.swiper-slide-active span.photo-browser-zoom-container, .photo-browser-slide.swiper-slide-next span.photo-browser-zoom-container, .photo-browser-slide.swiper-slide-prev span.photo-browser-zoom-container{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/*photoBrowser样式修改end*/
+
+/*choose指令样式Start*/
+.choose-unselect{
+  font-size: 14px;
+  color:rgb(51,51,51);
+  position: relative;
+  padding: 0 0 0 35px;
+  display: flex;
+  align-items: center;
+}
+.choose-unselect .choose-icon{
+  position: absolute;
+  content:'';
+  width:0.8rem;
+  height: 0.8rem;
+  left: 10px;
+  top: 50%;
+  margin-top: -0.4rem;
+}
+.choose-unselect .type1{
+  background: url(../imgs/shops/unselect.png) no-repeat;
+  background-size: 100%;
+}
+.choose-selected .type1{
+  background: url(../imgs/shops/selectshop.png) no-repeat;
+  background-size: 100%;
+}
+.choose-unselect .type2{
+  background: url(../imgs/shops/selecton2.png) no-repeat;
+  background-size: 100%;
+}
+.choose-selected .type2{
+  background: url(../imgs/shops/selectshop.png) no-repeat;
+  background-size: 100%;
+}
+.choose-unselect .type3{
+  background: url(../imgs/UI/unselect.png) no-repeat;
+  background-size: 100%;
+}
+.choose-selected .type3{
+  background: url(../imgs/UI/select.png) no-repeat;
+  background-size: 100%;
+}
+/*choose指令样式end*/

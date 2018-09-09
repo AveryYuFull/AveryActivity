@@ -1,0 +1,73 @@
+/** -----------------------  布局大小  ------------------------ */
+$headerHeight: 44px; // 头部高度
+$footerHeight: 53px; // 底部高度
+$maxWidth: 800px; // 最大宽度
+
+/** -----------------------  字号大小  ------------------------ */
+$defaultFontSize: 14px;
+$largeFontSize: 16px;
+$smallFontSize: 12px;
+$FontSize10: 10px;
+$FontSize9: 9px;
+$FontSize20: 20px;
+$FontSize13: 13px;
+$FontSize15: 15px;
+$FontSize48: 48px;
+
+/** -------------------------  颜色  -------------------------- */
+
+$colorf: #ffffff;
+$color0: #000;
+$color2: #222222;
+$color3: #333333;
+$color6: #666666;
+$color9: #999999;
+$colorDF: #DFDFDF;
+$defaultBtnBg: #E93348;
+$defaultBtnShadowBg: RGBA(223, 51, 72, 0.5);
+$colorRed:#DF3348;
+$colorAC:#AC6D35;
+$color39:#39B59C;
+$colorFF:#ffb239;
+$color5b:#5b5b5b;
+$color2fc:#2fc208;
+$colorDF3: #DF3348;
+$colorFB4: #FB4056;
+$colorF57: #F57C33;
+$color0t8: rgba(0,0,0,.8);
+$colorE99: #e99d26;
+$color79A: #79aeea;
+$color557: #557bc0;
+$colorFFC: #ffc46c;
+$colorF6A: #f6a857;
+$color3D4: #3d4145;
+$color2f:#2F2F2F;
+$colorFFE: #FFEC00;
+$color748: #748BA5;
+$colorF55: #F55669;
+
+// 背景
+$bgf: $colorf;
+$bgRed:$colorRed;
+$bgOrangeFC: #FCECC2;
+$bgOrangeFE: #FEDA74;
+$bgDF: $colorDF;
+$bg39: $color39;
+$bg2f: $color2f;
+$bgf_5: rgba(255,255,255,.5);
+$bg0_5: rgba(0,0,0, 0.5);
+
+// 边框
+$brRed:$colorRed;
+$brDF: $colorDF;
+$bre: #eeeeee;
+$bref: #efefef;
+$br39: $color39;
+$brf_5: rgba(255,255,255,.5);
+
+
+/** -------------------------  边距  -------------------------- */
+$plr: 10px; // 左右内边距
+$ptb: 10px; // 上下内边距
+
+$space5: 5px; // 间距

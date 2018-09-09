@@ -1,0 +1,42 @@
+// @import './btn.scss';
+// @import 'element-ui/lib/theme-chalk/index.css';
+// @import "./mixin.scss";
+
+@import "style/_public/_var.scss";
+@import "style/_public/_mixin.scss";
+@import "style/_public/_iconFont.scss";
+
+
+@include acIcon(); // 图标字体
+@include acFont('../', 'ac-alpha', 'ac-alpha');
+
+.ac_pingFang {
+    font-family:'PingFangSC-Regular', 'SourceHanSansCN-Regular';
+}
+
+.ac_pingFangM {
+    font-family:'PingFangSC-Medium', 'SourceHanSansCN-Medium';
+}
+
+.page {
+    ._content {
+        width: 100%;
+        overflow-x: hidden !important;
+        .tiresize{
+            .que{
+                img{
+                    width: 100%;
+                    min-height: 340px;
+                }
+            }
+        }
+    }
+}
+// * {
+//     -webkit-touch-callout: none;
+// }
+// .page-loading {
+//   margin-top: 18%;
+//   position: relative;
+// }
+

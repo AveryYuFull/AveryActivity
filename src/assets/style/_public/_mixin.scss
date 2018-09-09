@@ -1,0 +1,44 @@
+@mixin clearFloat {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin iconPadding{
+  &::before{
+    content: '\20';
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    bottom: -6px;
+    left: -6px;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+// css限制文字显示行数,多余部分隐藏
+@mixin lineClamp ($limitRows: 2) {
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $limitRows;
+  -webkit-box-orient: vertical;
+}
+
+// 居中显示
+@mixin centerAll{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}

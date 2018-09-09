@@ -1,0 +1,112 @@
+input::-webkit-input-placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+
+input:-moz-placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+
+input::-moz-placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+
+input:-ms-input-placeholder {
+  color: rgba(153, 153, 153, 1);
+}
+.tiresize{
+  .sizeTabs{
+    background:#fff;
+    height: 2.2rem;
+    display: flex;
+    text-align: center;
+    line-height: 2.2rem;
+    .tab{
+      flex:1;
+      color: rgba(102, 102, 102, 1);
+      font-size: 0.7rem;
+      border-bottom:1px solid rgba(217, 217, 217, 1);
+      &.selected{
+        color:rgba(241, 101, 39, 1);
+        border-bottom:0.075rem solid rgba(245, 123, 51, 1);
+      }
+    }
+  }
+  .carSize{
+    .carInfo{
+      background: #fff;
+      padding: 0 0.75rem;
+      display: flex;
+      align-items: center;
+      height: 2.5rem;
+      .brandIcon{
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: 0.5rem;
+      }
+      .brand{
+        color:rgba(51, 51, 51, 1);
+        font-size: 0.7rem;
+      }
+    }
+    .sizeList{
+      background:#fff;
+      padding: 0.22rem 0.75rem 0.875rem;
+      margin-bottom: 0.5rem;
+      .size{
+        width: 17.25rem;
+        height: 2rem;
+        border: 1px solid rgba(191, 191, 191, 1);
+        line-height: 2rem;
+        text-align: center;
+        color: rgba(102, 102, 102, 1);
+        font-size: 0.7rem;
+        margin-bottom: 0.5rem;
+        &.selected{
+          color:rgba(241, 101, 39, 1);
+        }
+        &:last-child{
+          margin:0;
+        }
+      }
+    }
+    .que{
+      padding: 0 0.5rem;
+      .tiresizeIcon{
+        width: 100%;
+      }
+    }
+  }
+  .selfSize{
+    padding:0 0.75rem;
+    background: #fff;
+    .tireIcon{
+      width: 100%;
+      margin: 1.35rem 0 0.525rem;
+    }
+    .find{
+      height: 5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .findInput{
+        border: 1px solid rgba(191, 191, 191, 1);
+        background: rgba(248, 248, 248, 1);
+        padding: 0 0.75rem;
+        height: 2rem;
+        line-height: 2.1rem;
+        width: 13.075rem;
+        font-size:0.7rem;
+        color:rgba(51, 51, 51, 1);
+      }
+      .findBtn{
+        height: 2rem;
+        width: 3.675rem;
+        color:#fff;
+        background:rgba(223, 51, 72, 1);
+        font-size: 0.7rem;
+        line-height: 2rem;
+        text-align: center;
+      }
+    }
+  }
+}
